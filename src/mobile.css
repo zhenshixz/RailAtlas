@@ -30,7 +30,7 @@
   .planning-app .station-row{padding:14px 8px;min-height:70px}
   .planning-app .station-row strong{font-size:17px}
   .planning-app .station-row small{font-size:13px}
-  .planning-app .sidebar-foot{padding:12px 18px}
+  .planning-app .sidebar-foot{display:none}
   .planning-app .icon-button,.planning-app .favorite-button,.destination-mobile-close{min-width:44px;min-height:44px}
   .origin-card{margin:16px 18px 0;padding:16px}
   .origin-card h2{font-size:25px}
@@ -100,7 +100,7 @@
   .destination-row aside strong{font-size:17px}
   .destination-row aside small{font-size:12px}
   .destination-row aside svg{display:none}
-  .planner-coverage{min-height:44px;font-size:12px;padding:10px 18px}
+  .planner-coverage{display:none}
   .destination-detail-heading{padding:8px 20px 12px}
   .back-link{min-height:40px;margin-bottom:4px;font-size:14px}
   .destination-detail-heading h2{font-size:25px}
