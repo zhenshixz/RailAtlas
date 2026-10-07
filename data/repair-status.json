@@ -1,1 +1,1 @@
-{"enabled":true,"state":"waiting","date":"2026-10-06","attempt":1,"nextRetryTimestamp":1791296393.2722406,"nextRetryAt":"2026-10-06T22:19:53.272241+08:00","lastAttemptAt":"2026-10-06T22:18:42.982645+08:00","failures":[{"train":"D4455","error":"官方经停接口暂未返回有效站表"}],"remaining":1}
+{"enabled":true,"state":"complete","date":"2026-10-06","attempt":0,"remaining":0,"nextRetryAt":null}

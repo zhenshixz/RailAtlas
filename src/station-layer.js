@@ -55,14 +55,14 @@ const StationLayer=L.Layer.extend({
     // painted world origin each frame so stations stay aligned with rail paths.
     if(this._origin)this._animateZoom({zoom:this._map.getZoom(),center:this._map.getCenter()});
   },
-  _find(point){
+  _find(point,minimumRadius=0){
     if(!point||this._zoom!==this._map.getZoom())return;
     const x=Math.floor(point.x/HIT_CELL),y=Math.floor(point.y/HIT_CELL);
     let nearest,distance=Infinity;
     for(let dx=-1;dx<=1;dx++)for(let dy=-1;dy<=1;dy++){
       for(const item of this._hits.get(`${x+dx},${y+dy}`)||[]){
         const d=(point.x-item.layerPoint.x)**2+(point.y-item.layerPoint.y)**2;
-        if(d<=(item.radius+5)**2&&d<distance){nearest=item;distance=d;}
+        if(d<=Math.max(item.radius+5,minimumRadius)**2&&d<distance){nearest=item;distance=d;}
       }
     }
     if(nearest)return nearest;
@@ -72,7 +72,8 @@ const StationLayer=L.Layer.extend({
     }
   },
   _click(event){
-    const item=this._find(event.layerPoint);
+    const touch=window.matchMedia('(max-width:800px) and (pointer:coarse)').matches;
+    const item=this._find(event.layerPoint,touch?22:0);
     if(!item)return;
     if(item.stations.length===1)this._onSelect(item.stations[0]);
     else this._map.fitBounds(item.stations.map(s=>[s.lat,s.lng]),{

@@ -1,0 +1,153 @@
+/* Mobile layout is isolated from the desktop planner. */
+.mobile-sheet-heading,.mobile-sheet-backdrop,.mobile-map-summary,.mobile-planner-dock{display:none}
+@media(max-width:800px){
+  body{overflow:hidden;overscroll-behavior:none}
+  .planning-app{height:100dvh;min-height:0}
+  .planning-app .header{height:calc(58px + env(safe-area-inset-top));padding:env(safe-area-inset-top) max(12px,env(safe-area-inset-right)) 0 max(12px,env(safe-area-inset-left));gap:10px}
+  .planning-app .brand{gap:7px;flex-shrink:0}
+  .planning-app .brand-icon{width:32px;height:32px;border-radius:10px}
+  .planning-app .brand-icon svg{width:20px}
+  .planning-app .brand b{font-size:17px}
+  .planning-app .brand small,.planning-app .brand-cn,.planning-app .official-link{display:none}
+  .planning-app .header nav{gap:4px;align-items:stretch}
+  .planning-app .header nav button{min-width:44px;padding:6px 4px;gap:3px;flex-direction:column;justify-content:center;font-size:10px;white-space:nowrap}
+  .planning-app .header nav button>span{position:absolute;right:0;top:3px;padding:0 4px;font-size:9px}
+  .planning-app .workspace{margin-bottom:calc(72px + env(safe-area-inset-bottom));width:100%;position:relative}
+  .planning-app .map-area{width:100%;min-width:0}
+  .planning-app .planner-sidebar{display:none;position:fixed;left:0;right:0;bottom:calc(72px + env(safe-area-inset-bottom));width:100%;height:min(76dvh,calc(100dvh - 140px - env(safe-area-inset-top) - env(safe-area-inset-bottom)));border:0;border-radius:22px 22px 0 0;box-shadow:0 -8px 35px #223e2e16;z-index:1200;overflow-x:hidden;overflow-y:auto;overscroll-behavior:contain;padding-bottom:8px}
+  .planning-app .planner-sidebar.mobile-open{display:flex}
+  .planning-app .planner-sidebar,.destination-panel{padding-left:env(safe-area-inset-left);padding-right:env(safe-area-inset-right)}
+  .planning-app .planner-sidebar>:not(.station-list){flex-shrink:0}
+  .mobile-sheet-heading{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:17px 20px 14px;position:sticky;top:0;z-index:2;background:#fff;border-bottom:1px solid #e7ece3}
+  .mobile-sheet-heading span{font-size:9px;color:#718566;letter-spacing:1.3px}
+  .mobile-sheet-heading h2{font-size:21px;margin:5px 0 0;font-weight:600;color:#294f3b}
+  .mobile-sheet-backdrop{display:block;position:fixed;inset:calc(58px + env(safe-area-inset-top)) 0 calc(72px + env(safe-area-inset-bottom));z-index:1100;background:#203a2e38;cursor:default}
+  .planning-app .planner-sidebar .sidebar-intro{display:none}
+  .planning-app .planner-sidebar .search-box{margin:16px 18px 0;padding:0 12px;min-height:48px;gap:9px}
+  .planning-app .search-box input,.destination-search input{font-size:16px;min-height:46px}
+  .planning-app .planner-sidebar .station-count{padding:17px 20px 12px;font-size:13px}
+  .planning-app .planner-sidebar .station-list{min-height:0;padding:0 12px;overscroll-behavior:contain;-webkit-overflow-scrolling:touch}
+  .planning-app .station-row{padding:14px 8px;min-height:70px}
+  .planning-app .station-row strong{font-size:17px}
+  .planning-app .station-row small{font-size:13px}
+  .planning-app .sidebar-foot{padding:12px 18px}
+  .planning-app .icon-button,.planning-app .favorite-button,.destination-mobile-close{min-width:44px;min-height:44px}
+  .origin-card{margin:16px 18px 0;padding:16px}
+  .origin-card h2{font-size:25px}
+  .origin-card h2 small{font-size:13px}
+  .origin-eyebrow,.origin-card p,.change-origin{font-size:13px}
+  .origin-card p{margin:5px 0 3px}
+  .change-origin{min-height:40px}
+  .time-budget{padding:20px 18px 14px}
+  .time-budget>label{font-size:14px;flex-wrap:nowrap;gap:7px}
+  .time-budget>label strong{width:auto;margin:0 0 0 auto;font-size:18px}
+  .hour-chips{grid-template-columns:repeat(3,1fr);gap:8px;margin:15px 0 16px}
+  .hour-chips button{min-height:46px;font-size:15px;padding:10px}
+  .time-budget>input{height:24px;margin:8px 0 14px;touch-action:pan-y}
+  .custom-hours{font-size:14px;gap:10px;flex-wrap:nowrap}
+  .custom-hours input{font-size:16px;width:80px;min-height:44px}
+  .planning-method{margin:0 18px;padding:14px 0}
+  .planning-method p{font-size:13px}
+  .planning-method button{min-height:38px;font-size:13px}
+  .origin-summary{padding:16px 20px;gap:35px;flex-wrap:nowrap}
+  .origin-summary strong{font-size:25px}
+  .origin-summary span{font-size:13px}
+  .range-button{margin:0 18px;min-height:48px;font-size:15px}
+  .origin-locate{min-height:44px;font-size:14px}
+  .planner-tip{margin:0 20px 16px}
+  .planner-tip p{font-size:12px}
+  .planner-map-heading,.planner-mobile-toggle{display:none}
+  .mobile-map-summary{display:flex;align-items:center;gap:10px;position:absolute;left:12px;right:66px;top:12px;padding:12px;text-align:left;z-index:650;border:1px solid #dde7d9;border-radius:12px;background:#ffffffef;box-shadow:0 3px 14px #365b2510;min-height:70px}
+  .mobile-summary-icon{height:38px;width:38px;display:flex;align-items:center;justify-content:center;border-radius:10px;background:#edf4e8;color:#18775d;flex-shrink:0}
+  .mobile-map-summary>span:nth-child(2){flex:1;min-width:0}
+  .mobile-map-summary b{display:block;font-size:16px;font-weight:600;color:#2c513b;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .mobile-map-summary small{display:block;margin-top:5px;font-size:12px;color:#607b50;line-height:1.5}
+  .mobile-map-summary>svg{color:#83987a;flex-shrink:0}
+  .mobile-map-summary{left:max(12px,env(safe-area-inset-left));right:calc(66px + env(safe-area-inset-right))}
+  .planner-layer-button,.has-origin .planner-layer-button{top:12px;right:12px;width:44px;height:44px}
+  .planner-layer-button svg{width:20px}
+  .planner-layer-button,.has-origin .planner-layer-button,.planner-map-controls{right:max(12px,env(safe-area-inset-right))}
+  .planner-layer-panel{top:65px;right:12px;width:280px;max-width:calc(100% - 24px);font-size:14px}
+  .planner-layer-panel label{min-height:48px}
+  .planner-layer-panel input{width:20px;height:20px}
+  .planner-layer-panel p{font-size:12px}
+  .planner-map-controls{left:auto;right:12px;bottom:46px}
+  .planner-map-controls button{height:44px;width:44px}
+  .planner-sync-status{left:12px;bottom:8px;max-width:calc(100% - 24px);font-size:11px;padding:8px 10px;min-height:36px}
+  .planner-start-hint{left:12px;right:12px;bottom:15px;transform:none;width:auto;max-width:none;font-size:12px;padding:8px 10px}
+  .planner-start-hint>button{min-height:36px;min-width:36px}
+  .planner-legend{display:none}
+  .mobile-planner-dock{position:fixed;bottom:0;left:0;right:0;height:calc(72px + env(safe-area-inset-bottom));padding:6px max(8px,env(safe-area-inset-right)) calc(6px + env(safe-area-inset-bottom)) max(8px,env(safe-area-inset-left));z-index:1300;display:grid;grid-template-columns:1fr 1fr 1fr;background:#fff;border-top:1px solid #dfe8dc;box-shadow:0 -3px 18px #29482b08;gap:6px}
+  .mobile-planner-dock button{display:flex;flex-direction:column;justify-content:center;align-items:center;gap:5px;border-radius:10px;font-size:12px;color:#5c7550;min-height:54px}
+  .mobile-planner-dock button.active{background:#edf5e9;color:#146a51;font-weight:600}
+  .mobile-planner-dock button>span{display:flex;align-items:center;gap:4px;white-space:nowrap}
+  .mobile-planner-dock small{font-size:10px;padding:1px 5px;border-radius:6px;background:#e6efdf}
+  .destination-panel{left:0;right:0;bottom:calc(72px + env(safe-area-inset-bottom));top:auto;width:100%;height:min(76dvh,calc(100dvh - 140px - env(safe-area-inset-top) - env(safe-area-inset-bottom)));max-height:none;border:0;border-radius:22px 22px 0 0;box-shadow:0 -8px 35px #223e2e16;z-index:1200;overscroll-behavior:contain;background:#fff}
+  .destination-topline{min-height:52px;padding:0 18px}
+  .destination-topline>span{font-size:12px;letter-spacing:.6px}
+  .destination-mobile-close{display:flex}
+  .destination-heading{padding:15px 20px 13px}
+  .destination-heading h2{font-size:22px}
+  .destination-heading p{font-size:13px;margin-top:7px}
+  .destination-filters{padding:0 18px 12px}
+  .destination-search{padding:0 10px}
+  .destination-filters select{min-height:44px;font-size:16px;padding:8px}
+  .destination-list,.direct-trip-list,.journey-stops{overscroll-behavior:contain;-webkit-overflow-scrolling:touch}
+  .destination-row{min-height:94px;padding:14px 8px}
+  .destination-row b{font-size:17px}
+  .destination-row p{font-size:13px}
+  .destination-row div>span{font-size:12px}
+  .destination-row aside strong{font-size:17px}
+  .destination-row aside small{font-size:12px}
+  .destination-row aside svg{display:none}
+  .planner-coverage{min-height:44px;font-size:12px;padding:10px 18px}
+  .destination-detail-heading{padding:8px 20px 12px}
+  .back-link{min-height:40px;margin-bottom:4px;font-size:14px}
+  .destination-detail-heading h2{font-size:25px}
+  .destination-detail-heading>p{margin:4px 0 10px;font-size:13px}
+  .destination-time{padding:12px 14px}
+  .destination-time strong{font-size:28px;margin:4px 0}
+  .destination-time span,.destination-time small{font-size:13px}
+  .destination-detail-heading>.locate-station{min-height:40px;margin-top:8px;font-size:13px}
+  .trip-list-caption{margin:12px 20px 8px;font-size:14px}
+  .direct-trip-list>button{min-height:82px;padding:13px 8px}
+  .direct-trip-list b{font-size:17px}
+  .direct-trip-list strong{font-size:16px}
+  .direct-trip-list p{font-size:16px;margin-top:8px;flex-wrap:wrap}
+  .direct-trip-list p>small{font-size:12px}
+  .journey-stops b,.journey-stops small{font-size:14px}
+  .journey-note{font-size:12px}
+  .destination-panel.is-trip .destination-time,.destination-panel.is-trip .destination-detail-heading>p,.destination-panel.is-trip .locate-station{display:none}
+  .destination-panel.is-trip .trip-summary{padding:14px 20px;gap:7px}
+  .planning-app .modal-backdrop{padding:12px;align-items:center}
+  .planning-app .data-modal{padding:20px;max-height:calc(100dvh - 24px - env(safe-area-inset-top) - env(safe-area-inset-bottom));border-radius:16px;overscroll-behavior:contain}
+  .planning-app .modal-heading h2{font-size:21px;line-height:1.5}
+  .planning-app .data-modal .modal-heading{position:sticky;top:-20px;background:#fff;z-index:1;padding-bottom:10px}
+  .planning-app .modal-subtitle,.planning-app .scope-note{font-size:13px;line-height:1.8;overflow-wrap:anywhere}
+  .planning-app .data-metrics{padding:16px 5px}
+  .planning-app .data-metrics b{font-size:22px}
+  .planning-app .data-metrics span{font-size:11px;line-height:1.6}
+  .planning-app .source-list b{font-size:14px}
+  .planning-app .source-list small{font-size:12px;line-height:1.6}
+  .planning-app .sync-section{flex-direction:column;align-items:stretch;gap:12px}
+  .planning-app .sync-section>div:last-child{flex-wrap:wrap}
+  .planning-app .sync-section input{font-size:16px;min-height:44px;max-width:100%}
+  .planning-app .sync-section button,.planning-app .export-actions button{min-height:44px;font-size:13px}
+  .planning-app .export-actions{flex-wrap:wrap}
+  .planning-app .toast{left:12px;right:12px;bottom:calc(84px + env(safe-area-inset-bottom));transform:none;width:auto;max-width:none;font-size:13px}
+  .planning-app .toast button{min-width:40px;min-height:40px}
+}
+@media(max-width:800px) and (max-height:550px){
+  .planning-app .planner-sidebar,.destination-panel{height:calc(100dvh - 130px - env(safe-area-inset-top) - env(safe-area-inset-bottom))}
+  .planning-app .planner-sidebar .station-list{flex:none;overflow:visible;min-height:120px}
+  .planning-app .planner-sidebar .sidebar-foot{display:none}
+  .mobile-sheet-heading{padding:10px 20px}
+  .mobile-sheet-heading h2{font-size:18px;margin-top:3px}
+  .destination-panel{overflow-y:auto}
+  .destination-panel>:not(.destination-list):not(.direct-trip-list):not(.journey-stops){flex-shrink:0}
+  .destination-list,.direct-trip-list,.journey-stops{flex:none;overflow:visible}
+  .mobile-map-summary{min-height:56px;padding:7px 10px;right:66px}
+  .mobile-summary-icon{display:none}
+  .planner-map-controls{flex-direction:row;bottom:46px}
+  .planner-map-controls button+button{border-top:0;border-left:1px solid #edf2e7}
+}

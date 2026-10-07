@@ -74,6 +74,8 @@ node scripts/prepare-geography.mjs
 
 ## 开发
 
+手机与小屏平板（宽度不超过 800px）使用全宽地图，底部提供出发站/时长、可达地图、目的地三个入口。搜索、筛选和车次详情在可收起的底部面板操作，适配横屏及手机安全区；输入框使用 16px 字体，地图站点扩大触控范围。桌面仍保留左侧设置、右侧目的地布局。手机样式独立放在 `src/mobile.css`。
+
 ```powershell
 npm install
 python server.py
