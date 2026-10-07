@@ -1,0 +1,115 @@
+/* Keep travel decisions readable at normal browser zoom, including mobile. */
+.planning-app .sidebar{width:330px}
+.planning-app .sidebar-intro p{font-size:13px;line-height:1.8;color:#65795f}
+.planning-app .search-box input{font-size:14px}
+.planning-app .station-row strong{font-size:16px}
+.planning-app .station-row strong>span{font-size:12px;color:#6f8068}
+.planning-app .station-row small{font-size:12px;color:#718267}
+.planning-app .station-count{font-size:13px}
+.origin-eyebrow,.origin-card p,.change-origin{font-size:13px;color:#59764d}
+.time-budget>label{font-size:14px;color:#486341}
+.time-budget>label strong{font-size:18px;color:#176d51}
+.hour-chips button{font-size:14px;padding:11px 4px;color:#587249}
+.custom-hours{font-size:13px;color:#5a714d}
+.custom-hours input{font-size:14px;width:67px}
+.planning-method>span,.planning-method b{font-size:13px;color:#426d44}
+.planning-method p{font-size:12px;line-height:1.8;color:#6d7e60}
+.planning-method button{font-size:12px;color:#5d7a4c;flex-wrap:wrap}
+.origin-summary span{font-size:12px;color:#718664;line-height:1.6}
+.range-button{font-size:14px;padding:12px}
+.origin-locate{font-size:13px;color:#5e7d4c}
+.planner-tip p{font-size:12px;color:#738363;line-height:1.8}
+.planning-app .sidebar-foot>span:nth-child(2){font-size:12px}
+.planning-app .sidebar-foot small{font-size:11px;color:#718367}
+.planner-map-heading>span{font-size:12px;color:#647b5e}
+.planner-map-heading p{font-size:14px;color:#416c37;padding:10px 12px}
+.province-label{font-size:19px;line-height:28px;color:#526b48}
+.selected-label{font-size:14px!important;font-weight:600}
+.destination-panel{width:380px}
+.has-origin .planner-layer-button,.planner-layer-panel{right:426px}
+.destination-topline>span{font-size:11px;color:#718466}
+.destination-heading h2{font-size:22px;color:#2f5738}
+.destination-heading p{font-size:13px;color:#6e825c}
+.destination-search input{font-size:13px;color:#47643b}
+.destination-search input::placeholder{color:#7c8e6c}
+.destination-filters select{font-size:12px;color:#607849;padding:9px 6px}
+.destination-row b{font-size:16px;color:#345332}
+.destination-row b>small{font-size:12px;color:#778866}
+.destination-row p{font-size:12px;color:#6e805b}
+.destination-row div>span{font-size:11px;color:#73865d;line-height:1.8}
+.destination-row aside strong{font-size:16px;color:#246b40}
+.destination-row aside small{font-size:11px;color:#75865f}
+.planner-coverage{font-size:11px;color:#8d7338}
+.planner-coverage.is-complete{color:#5e7b49}
+.back-link{font-size:12px;color:#5f7e4a}
+.destination-detail-heading h2{font-size:27px;color:#2c5034}
+.destination-detail-heading>p{font-size:13px;color:#6b7e59}
+.destination-time span{font-size:13px;color:#647c4b}
+.destination-time strong{font-size:30px;color:#286b3d;margin:7px 0 9px}
+.destination-time small{font-size:12px;color:#67804e;line-height:1.8}
+.locate-station{font-size:12px;padding:7px 9px}
+.trip-list-caption{font-size:13px;color:#526d40;flex-wrap:wrap}
+.trip-list-caption>span{font-size:11px;color:#71885c}
+.trip-time-note{font-size:12px;color:#8f733b}
+.direct-trip-list b{font-size:17px;color:#2c7292}
+.direct-trip-list strong{font-size:16px;color:#496f32;font-weight:600}
+.direct-trip-list p{font-size:15px;color:#456139;font-variant-numeric:tabular-nums}
+.direct-trip-list p>small{font-size:11px;color:#6d8254}
+.direct-trip-list p span>small,.direct-trip-list em{font-size:11px;color:#997335}
+.trip-summary b{font-size:21px}
+.trip-summary strong{font-size:17px}
+.trip-summary span,.trip-summary small{font-size:13px;color:#657d4c}
+.journey-stops b{font-size:15px;color:#476139}
+.journey-stops small{font-size:15px;color:#597842;font-variant-numeric:tabular-nums}
+.journey-stops>div>span{font-size:11px}
+.journey-note{font-size:12px;color:#71855b}
+.planner-legend span{font-size:12px;color:#496e3b}
+.planner-sync-status{font-size:11px}
+.planner-start-hint{font-size:12px}
+@media(max-width:1150px){
+  .planning-app .sidebar{width:300px}
+  .destination-panel{width:345px}
+  .has-origin .planner-layer-button,.planner-layer-panel{right:377px}
+  .destination-row aside strong{font-size:15px}
+  .planner-legend{gap:10px}
+  .planner-legend span{font-size:11px}
+}
+@media(max-width:800px){
+  .planning-app .sidebar{width:224px}
+  .destination-panel{width:auto}
+  .has-origin .planner-layer-button{right:16px}
+  .planner-layer-panel{right:16px}
+  .time-budget>label{font-size:13px;flex-wrap:wrap}
+  .time-budget>label strong{font-size:16px}
+  .planner-map-heading p{font-size:12px;padding:8px}
+  .planner-mobile-toggle{font-size:13px}
+  .planner-sync-status{font-size:10px}
+}
+@media(max-width:540px){
+  .planning-app .sidebar{width:160px}
+  .planner-sidebar .sidebar-intro h1{font-size:19px;line-height:1.5}
+  .planning-app .sidebar-intro p{font-size:12px}
+  .planning-app .search-box{margin:0 9px;padding:10px 7px;gap:4px}
+  .planning-app .search-box input{font-size:12px}
+  .origin-card h2{font-size:23px;overflow-wrap:anywhere}
+  .origin-eyebrow,.origin-card p,.change-origin{font-size:12px}
+  .hour-chips button{font-size:13px;padding:10px 2px}
+  .custom-hours{font-size:11px;gap:3px;flex-wrap:wrap}
+  .custom-hours input{font-size:13px;width:48px}
+  .planning-method>span,.planning-method b{font-size:12px;line-height:1.7}
+  .planning-method p,.planning-method button{font-size:11px}
+  .origin-summary{gap:10px;flex-wrap:wrap}
+  .origin-summary span{font-size:11px}
+  .range-button{font-size:12px;padding:11px 4px}
+  .origin-locate{font-size:12px}
+  .planner-tip p{font-size:11px}
+  .planner-map-heading h2{font-size:17px;line-height:1.5}
+  .planner-map-heading>span{font-size:10px}
+  .planner-map-heading p{font-size:11px}
+  .planner-mobile-toggle{font-size:12px;flex-wrap:wrap}
+  .planner-sync-status{font-size:9px}
+  .destination-detail-heading h2{font-size:26px}
+  .destination-time strong{font-size:28px}
+  .planning-app .sidebar-foot>span:nth-child(2){font-size:11px}
+  .planning-app .sidebar-foot small{font-size:10px}
+}

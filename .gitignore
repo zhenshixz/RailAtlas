@@ -1,0 +1,9 @@
+node_modules/
+dist/
+__pycache__/
+*.log
+data/raw/
+data/probe-*
+data/sync-progress.json
+data/sync.lock
+
