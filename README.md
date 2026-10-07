@@ -87,3 +87,7 @@ Vite 开发端口默认 5173，API 代理到 8790。生产构建 `npm run build`
 主要文件：`src/PlannerApp.jsx` 出游规划交互；`src/planner.js` 直达、中位数和跨日计算；`src/ChinaMap.jsx` 地图；`src/station-layer.js` 按视野绘制站点与名称的 Canvas；`src/planner.css` 规划布局；`server.py` 本机/LAN 服务与官方查询代理；`scripts/sync_data.py` 数据同步；`data/atlas.json` 可审计快照。项目不依赖其他工作区项目即可启动。核心时间计算验证：`npm run test:planner`。
 
 服务启动后会自动补齐缺失经停，按 1 分钟、5 分钟、15 分钟、1 小时、3 小时、6 小时退避重试，状态保存在 `data/repair-status.json`，重启后保留等待时间。仅请求未取得的车次；官方空响应仍保留为缺失。目录站数与完整经停详情冲突时，核对始终点、站序及有效时间后采用官方详情，并记录 `stopCountConflicts` 审计。关闭网页不影响后台补齐，服务需保持运行。
+
+坐标匹配先采用中文站名对应的社区/Wikidata记录，再补充唯一拼音OSM记录；12306目录存在同音站名时禁止仅凭拼音定位。已核实的双洋（SQS）及杨源（AYS）均为福建车站，原始依据和纠错说明保存在 `data/coordinate-overrides.json`（杨源OSM原始响应：`data/raw/yangyuan-osm.json`）。不确定坐标的站点保留在目的地列表，不放置到推测位置。
+
+手机目的地面板优先展示站点列表：标题和筛选入口合并为一行，分页保持约 29px 的单行高度；每页数量和范围放入浮层，展开不挤占列表。新增手机功能应区分常用操作和次要设置，避免常驻多行说明或重复标题。桌面分页仍保留总数、每页数量与后续结果提示。

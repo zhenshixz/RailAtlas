@@ -81,6 +81,16 @@ def fetch_json(url):
 
 def coordinates():
     result={}
+    # A unique English map label can still identify several Chinese stations.
+    # Reject homophone-only matches, even in older prepared coordinate files.
+    owners={}
+    dictionary=RAW/'station_name.js'
+    if dictionary.exists():
+        for entry in dictionary.read_text(encoding='utf-8').split('@')[1:]:
+            fields=entry.split('|')
+            if len(fields)>3:
+                owners.setdefault(fields[3].lower(),set()).add(fields[1])
+    ambiguous={name for names in owners.values() if len(names)>1 for name in names}
     path=DATA/'coordinate-stations.csv'
     if path.exists():
         for row in csv.DictReader(path.open(encoding='utf-8-sig',newline='')):
@@ -90,14 +100,14 @@ def coordinates():
                 name=row['站名'].removesuffix('站')
                 result[name]={'lng':lng,'lat':lat,'province':row['省'],'city':row['市'],'address':row['车站地址'],'coordinateSource':'社区车站坐标库（WGS84）','coordinateUrl':'https://github.com/listenzcc/China-rail-way-stations-data'}
             except (ValueError,KeyError): continue
-    matched=DATA/'osm-matched-stations.json'
-    if matched.exists():
-        for name,point in json.loads(matched.read_text(encoding='utf-8')).items():
-            if name not in result:result[name]=point
     wikidata=DATA/'wikidata-stations.json'
     if wikidata.exists():
         for name,point in json.loads(wikidata.read_text(encoding='utf-8')).items():
             if name not in result:result[name]=point
+    matched=DATA/'osm-matched-stations.json'
+    if matched.exists():
+        for name,point in json.loads(matched.read_text(encoding='utf-8')).items():
+            if name not in result and name not in ambiguous:result[name]=point
     osm=DATA/'osm-stations.json'
     if osm.exists():
         for el in json.loads(osm.read_text(encoding='utf-8')).get('elements',[]):
